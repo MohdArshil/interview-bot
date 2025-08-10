@@ -1,0 +1,18 @@
+# General
+.DS_Store
+*.log
+node_modules/
+dist/
+build/
+target/
+
+# Env
+.env
+.env.*.local
+frontend/.env
+
+# IDE
+.idea/
+.vscode/
+
+

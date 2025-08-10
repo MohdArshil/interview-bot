@@ -69,3 +69,9 @@ App: `http://localhost:3000`
 - SOLID: AI logic behind `InterviewAIClient` interface; service depends on abstraction, not concrete provider.
 - Separation of Concerns: CORS and exception handling centralized.
 - Environment-driven config: All secrets via env vars.
+
+## Why Spring AI (and benefits we saw)
+- Unified abstractions: We used Spring AI’s `ChatClient` to call OpenAI with minimal boilerplate, keeping our code framework-native and testable.
+- Pluggable providers: By depending on our `InterviewAIClient` interface and wiring Spring AI under the hood, we could swap models/providers (OpenAI-compatible) without changing business logic.
+- Strong Spring integration: Auto-configuration, DI-friendly beans, and simple property-based configuration let us move secrets to env vars and keep the service focused on domain logic.
+- Faster iteration: Prompt construction + `.call().content()` made question/feedback generation straightforward, reducing glue code and speeding up feature work.
